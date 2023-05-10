@@ -52,35 +52,34 @@ public class mobilePhone implements Telephone{
     @Override
     public boolean power() {
 
+        Scanner button = new Scanner(System.in);
+        System.out.println("""
+                    welcome to samsung Mobile...\s
+                     Press 1 to turn on phone:\s
+                     Press 2 to turn off phone:\s""");
 
 
-            Scanner button = new Scanner(System.in);
-            System.out.println("welcome to samsung Mobile..." + " " +
-                    "\n Press 1 to turn on phone: " +
-                    "\n Press 2 to turn off phone: ");
+        int selection = button.nextInt();
+        switch (selection) {
+            case 1 -> {
+                isPowerOn = true;
+                System.out.println("Turning on");
+            }
+            case 2 -> {
+                if (!isPowerOn) {
+                    System.out.println("Phone is already off");
 
-
-            int selection = button.nextInt();
-            switch (selection) {
-                case 1 -> {
-                    isPowerOn = true;
-                    System.out.println("Turning on");
-                }
-                case 2 -> {
-                    if (!isPowerOn) {
-                        System.out.println("Phone is already off");
-
-                    } else {
-                        System.out.println("Turning off");
-                    }
-                }
-                default -> {
-                    System.out.println("not applicable");
-
+                } else {
+                    System.out.println("Turning off");
                 }
             }
+            default -> {
+                System.out.println("not applicable");
 
-            return isPowerOn;
+            }
+        }
+
+        return isPowerOn;
 
 
     }
@@ -100,13 +99,15 @@ public class mobilePhone implements Telephone{
 
     }
     void message() {
-        mobilePhone mp = new mobilePhone();
+        com.company.mobilePhone mp = new com.company.mobilePhone();
         Scanner sc1 = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         System.out.println(
-                        " 1. Create a New Message" +
-                        "\n 2. Inbox" +
-                        "\n 3. Outbox");
+                """
+                         1. Create a New Message
+                         2. Inbox
+                         3. Outbox\
+                        """);
         int txt = sc1.nextInt();
         switch (txt) {
             case 1 -> {
@@ -120,10 +121,11 @@ public class mobilePhone implements Telephone{
                         "\nMessage: \n" + Message +
                         "\nTo: " + Recipient);
                 System.out.println(
-                                "1. yes" +
-                                "\n2. No" +
-                                "\n3. Edit message" +
-                                "\n4. Change recipient");
+                        """
+                                1. yes
+                                2. No
+                                3. Edit message
+                                4. Change recipient""");
                 int option = sc1.nextInt();
                 if (option == 1) {
                     System.out.println("sending...");

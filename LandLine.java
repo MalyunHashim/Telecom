@@ -11,7 +11,7 @@ public class LandLine extends Main {
 
 
     public void powerOn() {
-        System.out.println("Landline is always On!");
+        System.out.println("Landline is Online!");
     }
 
 

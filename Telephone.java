@@ -13,6 +13,6 @@ public interface Telephone {
     void calling();
     boolean answering();
     boolean declining();
-    boolean power(); 
+    boolean power();
 
 }

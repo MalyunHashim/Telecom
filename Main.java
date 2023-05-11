@@ -51,6 +51,7 @@ public class Main {
                     }
                     case 4 -> {
                         mp.power();
+                        //System.out.println("GENERAL");
                     }
                     default -> System.out.println("Option not Applicable");
                 }
@@ -90,13 +91,13 @@ public class Main {
         mobilePhone mp = new mobilePhone();
 
         // there should be an option to choose which type of phone to use 1st
-        com.company.Main menu = new com.company.Main();
+        Main menu = new Main();
         menu.mainMenu();
 
         if (mp.power()) {
 
             if(mp.isPowerOn){
-                com.company.Main m=new com.company.Main();
+                Main m=new Main();
                 m.mainMenu();
             }
 

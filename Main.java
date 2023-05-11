@@ -62,7 +62,7 @@ public class Main {
             do {
                 System.out.println("""
                                         what do you wish to do with the landline phone
-                                         1. Letter
+                                         1. Dial
                                          2. Call
                                          3. Power
                                          Enter Choice:""");

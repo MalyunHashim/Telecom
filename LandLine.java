@@ -12,6 +12,7 @@ public class LandLine extends Main {
 
     public void powerOn() {
         System.out.println("Landline is Online!");
+        System.out.println("And ready to roll");
     }
 
 

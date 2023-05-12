@@ -9,6 +9,7 @@ public class Main {
         LandLine landline = new LandLine("+254722000000");
         //the option to choose which type of phone to use should not be looped
         //should only be executed once in th program
+        //soon to be completed
 
         Scanner txt = new Scanner(System.in);
         System.out.println("""

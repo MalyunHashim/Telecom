@@ -6,6 +6,7 @@ public class Main {
     void mainMenu() {
 
         mobilePhone mp = new mobilePhone();
+        LandLine landline = new LandLine("+254722000000");
         //the option to choose which type of phone to use should not be looped
         //should only be executed once in th program
 
@@ -23,7 +24,7 @@ public class Main {
             //case 3:mp.power();
             case 2 -> {
                 System.out.println("Your are now using the Landline");
-                LandLine landline = new LandLine("+254722000000");
+
                 landline.powerOn();
             }
             default -> System.out.println("Option not Applicable!!!");
@@ -31,6 +32,8 @@ public class Main {
 
 
         if (phoneMode ==1){
+            mp.power();
+
             do {
                 System.out.println("""
                             What do you wish to do with the Mobile Phone
@@ -52,7 +55,10 @@ public class Main {
                     case 4 -> {
                         mp.power();
                     }
-                    default -> System.out.println("Option not Applicable");
+                    default -> {
+                        System.out.println("Option not Applicable");
+
+                    }
                 }
 
             }while(mp.isPowerOn);
@@ -68,17 +74,15 @@ public class Main {
 
                 int enter = txt.nextInt();
                 switch (enter) {
-                    case 1 -> mp.calling();
-                    case 2 -> {
-                        System.out.println("The Messaging App");
-                        mp.message();
-                    }
-                    case 3 -> System.out.println("Not yet  installed");
+                    case 1 -> landline.dialing();
+                    case 2 ->  landline.calling();
+
+                    case 3 -> System.out.println("LandLine is always Online");
                     default -> System.out.println("Option not Applicable");
                 }
 
 
-            }while(mp.isPowerOn);
+            }while(landline.isPowerOn);
         }else {
             System.out.println("Option not applicable!!!");
         }

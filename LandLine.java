@@ -5,6 +5,8 @@ public class LandLine extends Main {
     private String myNumber;
     private boolean isRinging;
 
+    boolean isPowerOn = true;
+
     public LandLine(String myNumber){
         this.myNumber = myNumber;
     }
